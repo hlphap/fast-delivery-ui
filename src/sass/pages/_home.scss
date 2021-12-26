@@ -1,0 +1,40 @@
+.home{
+    .policy-card{
+        @include flex(center, space-around);
+        margin: 20px 0;
+        
+        &-item{
+            width: 20%;
+            text-align: center;
+            padding: 20px;
+            box-shadow: $box-shadow;
+            padding: 20px;
+            transition: transform 0.5s ease;
+        
+            &:hover{
+                transform: translateY(-20px);
+                cursor: pointer;
+            }
+        }
+    }
+
+    .province-info{
+        text-align: center;
+        margin: auto;
+
+        &-form{
+            margin-bottom: 40px;
+            input{
+               margin-right: 10px;
+            }
+        }
+        &-txt{
+            @include flex(center, center);
+            h1{
+                display: inline-block;
+                font-size: 6rem;
+                margin-right: 20px;
+            }
+        }
+    }
+}
