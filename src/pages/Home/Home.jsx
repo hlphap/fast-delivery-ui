@@ -1,18 +1,15 @@
-import React from 'react'
+import { HeroSlider, Button, Grid, HeaderGuest } from '../../components'
+import './Home.scss'
 
-import HeroSlider from '../components/HeroSlider'
-import heroSliderData from '../assets/data/hero-slider'
+import post from '../../assets/img/list-post-offices.jpg'
+import banner from '../../assets/img/banner.jpg'
+import heroSliderData from '../../assets/data/hero-slider'
 
-import Grid from '../components/Grid'
-import Button from '../components/Button'
-
-import post from '../assets/img/list-post-offices.jpg'
-import banner from '../assets/img/banner.jpg'
 
 const Home = () => {
     return (
         <div className='home'>
-            <HeroSlider data={heroSliderData} control={true}/>
+            <HeroSlider data={heroSliderData} control={true} />
             <div className="policy-card">
                 <div className="policy-card-item">Fast Delivery Liên Tục Cập Nhật Tuyến Ảnh Hưởng Do Dịch</div>
                 <div className="policy-card-item">Giao/Nhận Hàng Tại TP.HCM Chính Thức Trở Lại Bình Thường</div>
@@ -21,11 +18,11 @@ const Home = () => {
             </div>
             <Grid col={2} mdCol={2} smCol={1} gap={20}>
                 <div className="province-img">
-                    <img src={post} />
+                    <img src={post} alt="" />
                 </div>
                 <div className="province-info">
                     <div className="province-info-form">
-                        <input type="text" placeholder='Chọn tỉnh thành'/>
+                        <input type="text" placeholder='Chọn tỉnh thành' />
                         <Button size='sm'>tra cứu điểm gửi hàng</Button>
                     </div>
                     <div className="province-info-txt">
@@ -35,7 +32,7 @@ const Home = () => {
                 </div>
             </Grid>
             <div className="banner">
-                <img style={{width: "100%"}} src={banner} alt="" />
+                <img style={{ width: "100%" }} src={banner} alt="" />
             </div>
             <div className="action">
                 <div className="action-item"></div>

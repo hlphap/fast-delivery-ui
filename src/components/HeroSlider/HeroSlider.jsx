@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Carousel from "react-elastic-carousel";
-import Item from "../assets/data/hero-slider";
+import Item from "../../assets/data/hero-slider";
+
+import './HeroSlider.scss'
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -11,7 +13,7 @@ const breakPoints = [
 
 const HeroSlider = props => {
 
-    const [items, setItems] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
+  const [items, setItems] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
 
   return (
     <div className="App">

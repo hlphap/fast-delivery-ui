@@ -1,7 +1,9 @@
 import React from 'react'
-import Grid from '../components/Grid'
-import Button from '../components/Button'
-import LoRe from '../components/LoRe'
+
+import { Grid, Button, LoRe } from '../../components'
+
+import './Login.scss'
+
 
 const Login = () => {
     return (
@@ -11,7 +13,7 @@ const Login = () => {
                 <p>Nhanh chóng, tiện lợi và an toàn. Đăng ký liền tay, rinh ngay quyền lợi.</p>
             </div>
             <Grid col={2} mdCol={2} smCol={1} gap={20}>
-                <LoRe/>
+                <LoRe />
                 <div className="login__form">
                     <h2>Đăng nhập</h2>
                     <p>Đăng nhập Fast Delivery để trải nghiệm</p>

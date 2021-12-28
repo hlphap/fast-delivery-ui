@@ -1,11 +1,10 @@
-import React from 'react'
-
 import { Link } from 'react-router-dom'
 
-import Grid from './Grid'
-import Button from './Button'
+import Grid from '../Grid'
+import Button from '../Button/Button'
 
-import logo from '../assets/img/Pháp Heo.png'
+import './Footer.scss'
+import logo from '../../assets/img/Pháp Heo.png'
 
 const footerAboutLinks = [
     {
@@ -85,7 +84,7 @@ const Footer = () => {
                         </div>
                         <div className="footer__content">
                             <p>Subscribe For Latest Updates</p>
-                            <input type="text" placeholder="Your email"/>
+                            <input type="text" placeholder="Your email" />
                             <Button size="sm">Subscribe</Button>
                         </div>
                     </div>
