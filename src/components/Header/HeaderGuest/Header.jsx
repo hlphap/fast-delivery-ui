@@ -1,34 +1,38 @@
-import { Link } from "react-router-dom"
-import './Header.scss'
+import { Link } from "react-router-dom";
+import styles from "./Header.module.scss";
 
-import logo from "../../../assets/img/Pháp Heo.png"
+import logo from "../../../assets/img/Pháp Heo.png";
 
-import Button from "../../Button/Button"
+import Button from "../../Button/Button";
 
 function Header() {
   return (
-    <div className='header'>
-      <div className='container'>
-        <div className='header__menu'>
-          <div className="header__menu__left">
-            <div className='header__menu__left__logo'>
-              <Link to='/'>
-                <img src={logo} alt='' />
+    <div className={styles.header}>
+      <div className={styles.container}>
+        <div className={styles.header__menu}>
+          <div className={styles.header__menu__left}>
+            <div className={styles.header__menu__left__logo}>
+              <Link to="/">
+                <img src={logo} alt="" />
               </Link>
             </div>
-            <div className='header__menu__left__link'>trang chủ</div>
-            <div className='header__menu__left__link'>dịch vụ</div>
-            <div className='header__menu__left__link'>tuyển dụng</div>
-            <div className='header__menu__left__link'>về chúng tôi</div>
+            <div className={styles.header__menu__left__link}>
+              <Link to="/">Trang chủ</Link>
+            </div>
+            <div className={styles.header__menu__left__link}>Dịch vụ</div>
+            <div className={styles.header__menu__left__link}>Tuyển dụng</div>
+            <div className={styles.header__menu__left__link}>Về chúng tôi</div>
           </div>
-          <div className="header__menu__right">
-            <Button size="sm" >Đăng nhập/Đăng ký</Button>
+          <div className={styles.header__menu__right}>
+            <Button size="sm">
+              <Link to="/login">Đăng nhập/Đăng ký</Link>
+            </Button>
             <input type="text" placeholder="Nhập mã đơn hàng cần tra cứu" />
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;

@@ -1,0 +1,50 @@
+.FranceInputBlock {
+  .FranceInputWrap {
+    margin-top: 1rem;
+    .TextInputWrap {
+      position: relative;
+      .TitleInput {
+        font-size: 1.25rem;
+        line-height: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        .MiniTitleInput {
+          font-size: 1.25rem;
+          color: #222222;
+          font-weight: lighter;
+        }
+      }
+    }
+    .InputWrap {
+      position: relative;
+      .Input {
+        height: 3.5rem;
+        border: 1px solid #e6e6e6;
+        transition: all 0.3s;
+        font-size: 1.4rem;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        width: 100%;
+        border-radius: 5px;
+        border-radius: 3rem;
+        padding: 0.5rem 1.25rem;
+        outline-color: #02aab0 !important;
+        padding: 0.5rem 2.25rem;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        font-family: "Nunito";
+      }
+      .IconWrap {
+        position: absolute;
+        top: 0.7rem;
+        right: 1.5rem;
+      }
+    }
+  }
+}
+
+.ErrorText {
+  margin-left: 0.6rem;
+  color: red;
+  margin-top: 0.6rem;
+  font-size: 1.4rem;
+}

@@ -1,0 +1,18 @@
+@import "../../../common/config.scss";
+
+.selectInput {
+  > h1 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+  }
+
+  > select {
+    width: 80%;
+  }
+
+  > select:hover,
+  > select:focus {
+    border: 1px solid $main-color;
+  }
+}

@@ -1,4 +1,4 @@
-import { HeroSlider, Button, Grid, HeaderGuest } from '../../components'
+import { HeroSlider, Button, Grid } from '../../components'
 import './Home.scss'
 
 import post from '../../assets/img/list-post-offices.jpg'

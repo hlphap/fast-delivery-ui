@@ -1,0 +1,43 @@
+@import "../../common/config.scss";
+
+.LoginModal {
+  .Account {
+    padding: 3rem 2rem;
+    background: #ffff;
+    width: 80%;
+    box-shadow: $box-shadow;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    .HeadingTitle {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+    .Description {
+      font-size: 1.15rem;
+      line-height: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+    .EventTextBlock {
+      margin-top: 2.2rem;
+      .EventText {
+        text-align: center;
+        font-size: 1.15rem;
+        .ActionEventLink {
+          color: #02aab0;
+          font-weight: 700;
+          transition: all 0.2s ease;
+        }
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+    .button {
+      display: flex;
+      justify-content: center;
+      padding: 1.25rem 0;
+    }
+  }
+}

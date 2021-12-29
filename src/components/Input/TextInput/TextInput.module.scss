@@ -1,0 +1,18 @@
+@import "../../../common/config.scss";
+
+.textInput {
+  > h1 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+  }
+
+  > input {
+    width: 80%;
+  }
+
+  > input:hover,
+  > input:focus {
+    border: 1px solid $main-color;
+  }
+}

@@ -1,0 +1,12 @@
+.Modal {
+  position: absolute;
+  display: block;
+  left: 00%;
+  right: 0;
+  top: 0%;
+  bottom: 0;
+  z-index: -9999;
+  z-index: 99;
+  zoom: 1;
+  transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 250ms;
+}

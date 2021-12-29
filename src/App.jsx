@@ -14,7 +14,6 @@ const App = () => {
                     <Route path='*' element={<RouterGuest />} />
                 </Routes >
             </div>
-            <Footer />
         </div>
     )
 }
