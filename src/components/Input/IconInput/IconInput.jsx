@@ -1,17 +1,21 @@
+import { useState } from "react";
 import Styles from "./IconInput.module.scss";
 
-function IconInput(props) {
-  const {
-    iconComponent,
-    textInput,
-    titleInput,
-    miniTitleInput,
-    isInValid,
-    errorText,
-    typeInput,
-    valueVar,
-    onChangefunc,
-  } = props;
+function IconInput({
+  iconComponent,
+  textInput,
+  titleInput,
+  miniTitleInput,
+  typeInput,
+  name,
+  onChange,
+}) {
+  const [data, setData] = useState("");
+
+  const handleOnChange = (e) => {
+    setData(e.target.value);
+    onChange(e);
+  };
 
   return (
     <div className={Styles.FranceInputBlock}>
@@ -26,15 +30,14 @@ function IconInput(props) {
         </div>
         <div className={Styles.InputWrap}>
           <input
-            onChange={(e) => onChangefunc(e.target.value)}
+            name={name}
             className={Styles.Input}
             autoComplete="off"
             placeholder={textInput}
-            value={typeInput === "date" ? textInput : valueVar}
             type={typeInput ? typeInput : "text"}
-            // onChange={onChange}
+            value={data}
+            onChange={handleOnChange}
           />
-          {!!isInValid && <p className={Styles.ErrorText}>{errorText}</p>}
           <div className={Styles.IconWrap}>
             {!!iconComponent && iconComponent}
           </div>

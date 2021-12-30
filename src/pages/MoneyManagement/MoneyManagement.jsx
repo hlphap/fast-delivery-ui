@@ -1,10 +1,11 @@
+import clsx from "clsx";
 import styles from "./MoneyManagement.module.scss";
 
 import { Grid, TextInput } from "../../components";
 
 const MoneyManagement = () => {
   return (
-    <div className={styles.moneyManagement}>
+    <div className={clsx(styles.moneyManagement, "container")}>
       <div className={styles.calendarManager}>
         <TextInput title="Từ ngày" type="date" />
         <TextInput title="Đến ngày" type="date" />

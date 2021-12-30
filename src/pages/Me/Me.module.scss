@@ -1,4 +1,10 @@
 .me {
+  > h1 {
+    text-transform: uppercase;
+    padding: 2rem 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
   Button {
     float: right;
     margin-right: 20%;

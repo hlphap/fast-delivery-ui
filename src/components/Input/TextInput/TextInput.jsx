@@ -6,18 +6,18 @@ const TextInput = ({
   name,
   disabled,
   onChange,
-  valueDisabled,
+  value,
   type = "text",
 }) => {
   const [data, setData] = useState("");
 
   useEffect(() => {
-    valueDisabled && setData(valueDisabled);
-  }, [valueDisabled]);
+    value && setData(value);
+  }, [value]);
 
   const handleOnChange = (e) => {
-    onChange(e);
     setData(e.target.value);
+    onChange(e);
   };
 
   return (
