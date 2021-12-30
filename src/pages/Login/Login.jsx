@@ -46,7 +46,7 @@ const Login = () => {
           <Modal
             styleClass={{
               left: "70%",
-              top: "20%",
+              top: "30%",
             }}
           >
             <div className={styles.LoginModal}>

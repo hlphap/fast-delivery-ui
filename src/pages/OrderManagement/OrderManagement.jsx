@@ -106,6 +106,7 @@ const OrderManagement = () => {
             };
           });
           setOrders(orders);
+          console.log(res.data.orders);
         }),
       {
         pending: "Đang tìm kiếm",

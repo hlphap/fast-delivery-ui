@@ -1,6 +1,6 @@
 import styles from "./SelectInput.module.scss";
 
-const SelectInput = ({ title, name, options, onChange }) => {
+const SelectInput = ({ title, name, options, onChange, valueShow, value }) => {
   return (
     <div className={styles.selectInput}>
       <h1>{title ? title : "Tên field"}</h1>
@@ -13,7 +13,7 @@ const SelectInput = ({ title, name, options, onChange }) => {
       >
         {title && (
           <option value="default" disabled>
-            {title}
+            {valueShow ? valueShow : title}
           </option>
         )}
         {options &&
