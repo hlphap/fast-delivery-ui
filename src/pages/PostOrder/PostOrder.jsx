@@ -1,7 +1,10 @@
-import styles from "./PostOrder.module.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import clsx from "clsx";
+import localStorage from "local-storage";
+import { toast } from "react-toastify";
 
+import styles from "./PostOrder.module.scss";
 import { Grid, SelectInput, TextInput, Button } from "../../components";
 
 const PostOrder = () => {
@@ -10,10 +13,29 @@ const PostOrder = () => {
   const [wards, setWards] = useState([]);
   const [dvMethods, setDVMethods] = useState([]);
   const [fee, setFee] = useState();
+  let postOrder;
 
   const handleOnChange = (e) => {
     const newData = { ...data, [e.target.name]: e.target.value };
     setData(newData);
+  };
+
+  postOrder = {
+    ownerStoreID: localStorage.get("store")._id,
+    orderName: data.orderName ? data.orderName : null,
+    weight: data.weight ? data.weight : null,
+    orderMoney: data.orderMoney ? Number(data.orderMoney) : 0,
+    note: data.note ? data.note : "",
+    receiverName: data.receiverName ? data.receiverName : null,
+    receiverPhone: data.receiverPhone ? data.receiverPhone : null,
+    receiverEmail: data.receiverEmail ? data.receiverEmail : null,
+    receiverAddress: {
+      fullAddress: "",
+      noteAddress: data.noteAddress ? data.noteAddress : null,
+      ward: data.ward ? JSON.parse(data.ward) : null,
+    },
+    useDVMethod: data.dvMethod ? JSON.parse(data.dvMethod) : null,
+    useCommission: false,
   };
 
   //Get data districts + dvMethod
@@ -50,11 +72,76 @@ const PostOrder = () => {
         });
   }, [data.district]);
 
-  //Get fee
-  useEffect(() => {}, [data.district, data.ward, data.dvMethod]);
+  const getFee = () => {
+    if (!data.ward) {
+      toast.error("Chưa nhập địa chỉ người nhận");
+      return;
+    }
+    if (!data.weight) {
+      toast.error("Chưa nhập khối lượng");
+      return;
+    }
+    if (!data.dvMethod) {
+      toast.error("Chưa chọn phương thức vận chuyển");
+      return;
+    }
+    axios
+      .post(process.env.REACT_APP_API_URL + "/orders/fee", postOrder)
+      .then((response) => {
+        setFee(response.data.fee);
+      })
+      .catch((err) => console.log(err.response.data.errorMessage));
+  };
+
+  const handlePostOrder = () => {
+    if (!postOrder.ownerStoreID) {
+      toast.error("Chưa nhập thông tin đơn hàng");
+      return;
+    }
+    if (!postOrder.orderName) {
+      toast.error("Chưa nhập tên đơn hàng");
+      return;
+    }
+    if (!postOrder.weight) {
+      toast.error("Chưa nhập khối lượng");
+      return;
+    }
+    if (!postOrder.receiverName) {
+      toast.error("Chưa nhập tên người nhận");
+      return;
+    }
+    if (!postOrder.receiverPhone) {
+      toast.error("Chưa nhập số điện thoại người nhận");
+      return;
+    }
+    if (!postOrder.receiverPhone) {
+      toast.error("Chưa nhập địa chỉ email người nhận");
+      return;
+    }
+    if (!postOrder.receiverAddress.ward) {
+      toast.error("Chưa chọn phường/ xã");
+      return;
+    }
+    if (!postOrder.receiverAddress.noteAddress) {
+      toast.error("Chưa nhập địa chỉ cụ thể");
+      return;
+    }
+    if (!postOrder.useDVMethod) {
+      toast.error("Chưa chọn phương thức vận chuyển");
+      return;
+    }
+    toast.promise(
+      axios.post(process.env.REACT_APP_API_URL + "/orders", postOrder),
+      {
+        pending: "Đang tạo đơn hàng",
+        success: "Tạo đơn hàng thành công",
+        error: "Tạo đơn hàng thất bại",
+      }
+    );
+  };
 
   return (
-    <div className={styles.postOrder}>
+    <div className={clsx(styles.postOrder, "container")}>
       <h1>Đăng đơn hàng</h1>
       <Grid col={3} mdCol={2} smCol={1} gap={10}>
         <div>
@@ -90,6 +177,11 @@ const PostOrder = () => {
             name="receiverPhone"
             onChange={(e) => handleOnChange(e)}
           />
+          <TextInput
+            title="Email"
+            name="receiverEmail"
+            onChange={(e) => handleOnChange(e)}
+          />
           <SelectInput
             title="Tỉnh/ Quận"
             name="district"
@@ -119,32 +211,40 @@ const PostOrder = () => {
             title="Phí giao hàng"
             name="orderName"
             disabled
-            valueDisabled="123"
+            value={fee?.standard}
             onChange={(e) => handleOnChange(e)}
           />
           <TextInput
             title="Phụ phí"
             name="orderName"
+            value={fee?.surCharge}
             disabled
             onChange={(e) => handleOnChange(e)}
           />
           <TextInput
             title="Giảm theo chính sách"
             name="orderName"
+            value={fee?.commission}
             disabled
             onChange={(e) => handleOnChange(e)}
           />
           <TextInput
             title="Tổng phí giao hàng"
             disabled
+            value={fee?.total}
             name="orderName"
             onChange={(e) => handleOnChange(e)}
           />
         </div>
       </Grid>
-      <Button className={styles.btnAddOrder} size="sm">
-        Thêm đơn hàng
-      </Button>
+      <div className={styles.btnAddOrder}>
+        <Button size="sm" onClick={getFee}>
+          Tính phí
+        </Button>
+        <Button size="sm" onClick={handlePostOrder}>
+          Thêm đơn hàng
+        </Button>
+      </div>
     </div>
   );
 };

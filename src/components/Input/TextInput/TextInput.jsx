@@ -13,6 +13,7 @@ const TextInput = ({
 
   useEffect(() => {
     value && setData(value);
+    if (value === 0) setData(0);
   }, [value]);
 
   const handleOnChange = (e) => {

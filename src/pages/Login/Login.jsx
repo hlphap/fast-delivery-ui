@@ -3,7 +3,6 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import localStorage from "local-storage";
 
-import "react-toastify/dist/ReactToastify.css";
 import styles from "./Login.module.scss";
 
 import { Modal, IconInput, Button, LoRe, Banner } from "../../components";

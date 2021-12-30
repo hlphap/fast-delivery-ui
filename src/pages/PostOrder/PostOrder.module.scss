@@ -5,8 +5,11 @@
     font-size: 1.25rem;
     font-weight: 700;
   }
-  > Button {
+  .btnAddOrder {
     margin-top: 0.5rem;
     float: right;
+    > Button {
+      margin-left: 1rem;
+    }
   }
 }

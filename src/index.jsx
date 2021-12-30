@@ -7,6 +7,7 @@ import { ToastContainer, Slide } from "react-toastify";
 import App from "./App";
 
 import "./assets/boxicons-2.0.9/css/boxicons.min.css";
+import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,7 +15,7 @@ ReactDOM.render(
       <App />
       <ToastContainer
         position="top-right"
-        autoClose={5000}
+        autoClose={2500}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -24,6 +25,7 @@ ReactDOM.render(
         pauseOnHover
         theme="colored"
         transition={Slide}
+        limit={5}
       />
     </BrowserRouter>
   </React.StrictMode>,
