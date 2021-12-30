@@ -24,6 +24,7 @@ const Login = () => {
         .then((res) => {
           localStorage.set("token", res.data.token);
           localStorage.set("store", res.data.store);
+          localStorage.set("storeID", res.data.store._id);
           setTimeout(() => {
             window.location.href = "/store";
           }, 1000);

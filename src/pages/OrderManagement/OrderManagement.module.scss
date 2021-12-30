@@ -5,7 +5,10 @@
     font-size: 1.25rem;
     font-weight: 700;
   }
-  Button {
-    float: right;
+  .button {
+    width: 100%;
+    display: inline-flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
   }
 }
