@@ -9,71 +9,57 @@ const Login = () => {
   return (
     <div className="login">
       <Banner />
-      <LoRe />
-      <Modal
-        styleClass={{
-          left: "70%",
-          top: "20%",
-        }}
-      >
-        <div className={styles.LoginModal}>
-          <div className={styles.Account}>
-            <h2 className={styles.HeadingTitle}>Đăng nhập</h2>
-            <div className={styles.DescriptionBlock}>
-              <h4 className={styles.Description}>
-                Đăng nhập FranceStay để trải nghiệm
-              </h4>
-            </div>
-            <IconInput
-              errorText={"*Chưa nhập địa chỉ Email"}
-              textInput="email"
-              iconComponent={<Gmail />}
-            />
-            <IconInput
-              typeInput="password"
-              textInput="password"
-              iconComponent={<Password />}
-            />
+      <div className="container">
+        <LoRe />
+        <Modal
+          styleClass={{
+            left: "70%",
+            top: "20%",
+          }}
+        >
+          <div className={styles.LoginModal}>
+            <div className={styles.Account}>
+              <h2 className={styles.HeadingTitle}>Đăng nhập</h2>
+              <div className={styles.DescriptionBlock}>
+                <h4 className={styles.Description}>
+                  Đăng nhập FranceStay để trải nghiệm
+                </h4>
+              </div>
+              <IconInput
+                errorText={"*Chưa nhập địa chỉ Email"}
+                textInput="email"
+                iconComponent={<Gmail />}
+              />
+              <IconInput
+                typeInput="password"
+                textInput="password"
+                iconComponent={<Password />}
+              />
 
-            <div className={styles.button}>
-              <Button size="sm">Đăng nhập</Button>
-            </div>
+              <div className={styles.button}>
+                <Button size="sm">Đăng nhập</Button>
+              </div>
 
-            <div className={styles.EventTextBlock}>
-              <p className={styles.EventText}>
-                Quên mật khẩu ?{" "}
-                <a href="/forgot" className={styles.ActionEventLink}>
-                  Nhấn vào đây
-                </a>
-              </p>
-            </div>
-            <div className={styles.EventTextBlock}>
-              <p className={styles.EventText}>
-                Bạn chưa có tài khoản FranceStay?{" "}
-                <a href="register" className={styles.ActionEventLink}>
-                  Đăng ký
-                </a>
-              </p>
+              <div className={styles.EventTextBlock}>
+                <p className={styles.EventText}>
+                  Quên mật khẩu ?{" "}
+                  <a href="/forgot" className={styles.ActionEventLink}>
+                    Nhấn vào đây
+                  </a>
+                </p>
+              </div>
+              <div className={styles.EventTextBlock}>
+                <p className={styles.EventText}>
+                  Bạn chưa có tài khoản FranceStay?{" "}
+                  <a href="register" className={styles.ActionEventLink}>
+                    Đăng ký
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </Modal>
-
-      {/* <div className="login__form">
-                    <h2>Đăng nhập</h2>
-                    <p>Đăng nhập Fast Delivery để trải nghiệm</p>
-                    <div className="login__field">
-                        <i className='login__icon bx bx-mail-send' ></i>
-                        <input type="text" className="login__input" placeholder="Địa chỉ Email" />
-                    </div>
-                    <div className="login__field">
-                        <i className='login__icon bx bx-lock-alt' ></i>
-                        <input type="password" className="login__input" placeholder="Mật khẩu" />
-                    </div>
-                    <Button>đăng nhập</Button>
-                    <p>Quên mật khẩu? <span>Nhấn vào đây</span></p>
-                    <p>Bạn chưa có tài khoản FastDelivery? <span>Đăng ký</span></p>
-                </div> */}
+        </Modal>
+      </div>
     </div>
   );
 };

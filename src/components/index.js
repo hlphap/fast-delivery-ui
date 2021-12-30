@@ -9,4 +9,5 @@ export { default as SelectInput } from "./Input/SelectInput/SelectInput";
 export { default as Banner } from "./Banner/Banner";
 export { default as Modal } from "./Modal/Modal";
 export { default as IconInput } from "./Input/IconInput/IconInput";
+export { default as ItemIntroduce } from "./ItemIntroduce/ItemIntroduce";
 export { default as Grid } from "./Grid";

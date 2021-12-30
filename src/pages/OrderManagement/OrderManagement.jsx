@@ -1,10 +1,11 @@
 import styles from "./OrderManagement.module.scss";
+import clsx from "clsx";
 
 import { Grid, SelectInput, TextInput, Button } from "../../components";
 
 const OrderManagement = () => {
   return (
-    <div className={styles.orderManagement}>
+    <div className={clsx(styles.orderManagement, "container")}>
       <h1>Quản lý đơn hàng</h1>
       <Grid col={3} mdCol={2} smCol={1} gap={10}>
         <div>
