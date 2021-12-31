@@ -1,0 +1,26 @@
+@import "../../common/config.scss";
+
+.heading_title_icon {
+  padding: 2.4rem 0 0 0;
+  .title_icon {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    background-color: #f6f7f9;
+    border-radius: 2.4rem;
+    padding-right: 1.2rem;
+    margin-bottom: 10px;
+
+    .icon {
+      padding: 0.5rem;
+      border-radius: 50%;
+      background-color: #ffff;
+      margin: 5px 1rem 5px 5px;
+    }
+    .title {
+      @extend .value_common;
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+  }
+}

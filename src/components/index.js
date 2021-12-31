@@ -10,4 +10,6 @@ export { default as Banner } from "./Banner/Banner";
 export { default as Modal } from "./Modal/Modal";
 export { default as IconInput } from "./Input/IconInput/IconInput";
 export { default as ItemIntroduce } from "./ItemIntroduce/ItemIntroduce";
+export { default as HeadingIcon } from "./HeadingIcon/HeadingIcon";
+export { default as InfoGroup } from "./InfoGroup/InfoGroup";
 export { default as Grid } from "./Grid";

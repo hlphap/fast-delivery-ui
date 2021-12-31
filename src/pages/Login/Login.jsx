@@ -5,7 +5,14 @@ import localStorage from "local-storage";
 
 import styles from "./Login.module.scss";
 
-import { Modal, IconInput, Button, LoRe, Banner } from "../../components";
+import {
+  Modal,
+  IconInput,
+  Button,
+  LoRe,
+  Banner,
+  HeaderGuest,
+} from "../../components";
 
 import { Gmail, Password } from "../../assets/data/Icons";
 
@@ -39,6 +46,7 @@ const Login = () => {
 
   return (
     <>
+      <HeaderGuest />
       <div className="login">
         <Banner />
         <div className="container">
@@ -54,7 +62,7 @@ const Login = () => {
                 <h2 className={styles.HeadingTitle}>Đăng nhập</h2>
                 <div className={styles.DescriptionBlock}>
                   <h4 className={styles.Description}>
-                    Đăng nhập FranceStay để trải nghiệm
+                    Đăng nhập FastDelivery để trải nghiệm
                   </h4>
                 </div>
                 <IconInput
@@ -88,7 +96,7 @@ const Login = () => {
                 </div>
                 <div className={styles.EventTextBlock}>
                   <p className={styles.EventText}>
-                    Bạn chưa có tài khoản FranceStay?{" "}
+                    Bạn chưa có tài khoản FastDelivery?{" "}
                     <a href="register" className={styles.ActionEventLink}>
                       Đăng ký
                     </a>

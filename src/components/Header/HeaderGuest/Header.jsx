@@ -64,8 +64,12 @@ function Header() {
             <div className={styles.header__menu__left__link}>
               <Link to="/">Trang chủ</Link>
             </div>
-            <div className={styles.header__menu__left__link}>Dịch vụ</div>
-            <div className={styles.header__menu__left__link}>Tuyển dụng</div>
+            <div className={styles.header__menu__left__link}>
+              <Link to="/tracking">Tra cứu đơn hàng</Link>
+            </div>
+            <div className={styles.header__menu__left__link}>
+              <a href="https://ghn.vn/blogs/tuyen-dung">Tuyển dụng</a>
+            </div>
             <div className={styles.header__menu__left__link}>Về chúng tôi</div>
           </div>
 
@@ -75,7 +79,7 @@ function Header() {
                 <Link to="/login">Đăng nhập/Đăng ký</Link>
               </Button>
             )}
-            <input type="text" placeholder="Nhập mã đơn hàng cần tra cứu" />
+
             {isLogin && (
               <div style={{ display: "inline-flex" }}>
                 <div className={styles.HeaderLeftProfile}>
