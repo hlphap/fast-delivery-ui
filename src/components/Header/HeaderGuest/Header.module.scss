@@ -75,5 +75,29 @@
         margin-left: 10px;
       }
     }
+
+    .HeaderLeftProfile {
+      margin-left: 1rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      background-color: #f6f6f6;
+      border-radius: 5px;
+      padding: 0.8rem 1rem;
+      display: flex;
+      align-items: center;
+      :hover {
+        color: #02aab0;
+      }
+      button {
+        color: #000000;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        background: transparent;
+      }
+      &Menu {
+        color: #000000;
+      }
+    }
   }
 }
