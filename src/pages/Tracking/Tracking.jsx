@@ -27,6 +27,7 @@ function Tracking() {
       });
   };
 
+  console.log(order);
   return (
     <>
       <div className={styles.header}>
@@ -65,7 +66,7 @@ function Tracking() {
           </div>
         </div>
       </div>
-      {tracking && (
+      {tracking && order && (
         <div className={clsx(styles.body, "container")}>
           <InfoGroup title="Ước lượng thời gian giao hàng">
             <div className={styles.estimate}>
@@ -81,7 +82,7 @@ function Tracking() {
                 <div className={styles.oneTracking}>
                   <div className={styles.timeTracking}>
                     <AccessTimeIcon style={{ fill: "#fa4a0c" }} />
-                    <h2>{tracking.status.name}</h2>
+                    <h2>{tracking.timeStamp}</h2>
                   </div>
                   <p>Name status: {tracking.status.name}</p>
                   <p>Note: {tracking.status.note}</p>
@@ -93,10 +94,22 @@ function Tracking() {
             <div className={styles.infoOrder}>
               <Grid col={2}>
                 <div>
-                  <TextInput title="Tên đơn hàng" />
-                  <TextInput title="Phương thức vận chuyển" />
+                  <TextInput
+                    title="Tên đơn hàng"
+                    name="orderName"
+                    value={order?.orderName}
+                    disabled
+                  />
+                  <TextInput
+                    title="Phương thức vận chuyển"
+                    value={order?.useDVMethod?.name}
+                  />
                 </div>
-                <TextInput title="Địa chỉ giao hàng" />
+                <TextInput
+                  styles={{ width: "200px" }}
+                  title="Địa chỉ giao hàng"
+                  value={order?.receiverAddress?.fullAddress}
+                />
               </Grid>
             </div>
           </InfoGroup>
